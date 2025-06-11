@@ -16,6 +16,10 @@ jobs:
           npx cypress info
       - run:
           DEBUG=cypress:launcher:*,cypress-verbose:launcher:* npx cypress info
+      - run:
+          google-chrome --version
+      - run:
+          chrome --version || true
 workflows:
   test-workflow:
     jobs:
