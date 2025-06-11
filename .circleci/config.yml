@@ -15,7 +15,7 @@ jobs:
       - run:
           npx cypress info
       - run:
-          DEBUG=cypress:launcher:* npx cypress info
+          DEBUG=cypress:launcher:*,cypress-verbose:launcher:* npx cypress info
 workflows:
   test-workflow:
     jobs:
