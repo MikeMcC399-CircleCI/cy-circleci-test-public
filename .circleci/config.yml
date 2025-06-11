@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  browser-tools: circleci/browser-tools@2.1.0
+  browser-tools: circleci/browser-tools@2
 jobs:
   test:
     docker:
@@ -9,17 +9,20 @@ jobs:
       - checkout
       - run:
           npm ci --frozen-lockfile
-      - browser-tools/install_browser_tools:
-          install_chrome_for_testing: true
-          install_edge: true
+      - browser-tools/install_edge
       - run:
           npx cypress info
       - run:
           DEBUG=cypress:launcher:*,cypress-verbose:launcher:* npx cypress info
       - run:
-          google-chrome --version
+          name: show installation files
+          command: |
+            ls -al /usr/bin | grep edge
+            ls -al /etc/alternatives/microsoft-edge
       - run:
-          chrome --version || true
+          microsoft-edge --version
+      - run:
+          npx cypress run --browser edge
 workflows:
   test-workflow:
     jobs:
