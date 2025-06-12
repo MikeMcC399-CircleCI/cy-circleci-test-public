@@ -13,14 +13,16 @@ jobs:
           install_chromedriver: false
       - run:
           npx cypress info
-      - run:
-          DEBUG=cypress:launcher:*,cypress-verbose:launcher:* npx cypress info
+      # - run:
+      #     DEBUG=cypress:launcher:*,cypress-verbose:launcher:* npx cypress info
       - run:
           name: show installation files
           command: |
             ls -al /usr/local/bin
       - run:
-          chrome --version || true
+          chrome --version
+      - run:
+          npx cypress run --browser chrome-for-testing
 workflows:
   test-workflow:
     jobs:
