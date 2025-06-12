@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  browser-tools: circleci/browser-tools@2.1.0
+  browser-tools: circleci/browser-tools@2
 jobs:
   test:
     docker:
@@ -19,7 +19,6 @@ jobs:
           name: show installation files
           command: |
             ls -al /usr/local/bin
-            find /usr/local/bin/chrome-linux64
       - run:
           chrome --version || true
 workflows:
