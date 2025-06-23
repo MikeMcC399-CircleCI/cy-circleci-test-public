@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  browser-tools: circleci/browser-tools@2.1.0
+  browser-tools: circleci/browser-tools@2
 jobs:
   test:
     docker:
@@ -19,7 +19,7 @@ jobs:
       - run:
           google-chrome --version
       - run:
-          chrome --version || true
+          chrome --version
 workflows:
   test-workflow:
     jobs:
