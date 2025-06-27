@@ -11,11 +11,14 @@ jobs:
           npm ci --frozen-lockfile
       - browser-tools/install_browser_tools:
           install_chrome: true
+          install_chromedriver: false
           install_chrome_for_testing: true
           install_edge: true
           install_firefox: true
       - run:
           npx cypress info
+      - run:
+          google-chrome --version
       - run:
           chrome --version
       - run:
