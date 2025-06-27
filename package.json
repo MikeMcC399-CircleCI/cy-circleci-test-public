@@ -1,17 +1,13 @@
 {
   "name": "cy-circleci-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "info": "cypress info",
     "start:dev": "echo starting development server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "cypress": "^14.4.1"
+    "cypress": "^14.5.0"
   }
 }
