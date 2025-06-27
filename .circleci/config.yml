@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  browser-tools: circleci/browser-tools@2
+  browser-tools: circleci/browser-tools@2 # https://circleci.com/developer/orbs/orb/circleci/browser-tools
 jobs:
   test:
     docker:
@@ -9,17 +9,13 @@ jobs:
       - checkout
       - run:
           npm ci --frozen-lockfile
-      - browser-tools/install_chrome_for_testing
+      - browser-tools/install_chrome
       - run:
           npx cypress info
       - run:
-          name: show installation files
-          command: |
-            ls -al /usr/local/bin
+          google-chrome --version
       - run:
-          chrome --version
-      - run:
-          npx cypress run --browser chrome-for-testing
+          npx cypress run --browser chrome
 workflows:
   test-workflow:
     jobs:
