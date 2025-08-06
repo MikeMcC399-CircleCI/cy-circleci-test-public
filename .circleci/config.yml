@@ -10,7 +10,7 @@ jobs:
       - run:
           npm ci --frozen-lockfile
       - browser-tools/install_chrome_for_testing:
-          version: 138.0.7204.183
+          version: 139.0.7258.66
       - run:
           npx cypress info
       - run:
