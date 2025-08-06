@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  browser-tools: circleci/browser-tools@2 # https://circleci.com/developer/orbs/orb/circleci/browser-tools
+  browser-tools: circleci/browser-tools@1.5.3 # https://circleci.com/developer/orbs/orb/circleci/browser-tools
 jobs:
   test:
     docker:
@@ -9,12 +9,7 @@ jobs:
       - checkout
       - run:
           npm ci --frozen-lockfile
-      - browser-tools/install_browser_tools:
-          install_chrome: true
-          install_chromedriver: false
-          install_chrome_for_testing: true
-          install_edge: true
-          install_firefox: true
+      - browser-tools/install-browser-tools
       - run:
           npx cypress info
       - run:
