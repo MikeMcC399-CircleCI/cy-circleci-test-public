@@ -15,8 +15,6 @@ jobs:
       - run:
           google-chrome --version
       - run:
-          microsoft-edge --version
-      - run:
           firefox --version
 workflows:
   test-workflow:
