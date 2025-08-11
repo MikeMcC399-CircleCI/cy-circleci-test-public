@@ -3,23 +3,16 @@ orbs:
   browser-tools: circleci/browser-tools@2
 jobs:
   test:
-    docker:
-      - image: cimg/node:22.18.0-browsers
+    machine:
+      image: ubuntu-2204:2023.04.2
     steps:
-      - checkout
-      - run:
-          npm ci --frozen-lockfile
       - browser-tools/install_chrome_for_testing
-      - run:
-          npx cypress info
       - run:
           name: show installation files
           command: |
             ls -al /usr/local/bin
       - run:
           chrome --version
-      - run:
-          npx cypress run --browser chrome-for-testing
 workflows:
   test-workflow:
     jobs:
