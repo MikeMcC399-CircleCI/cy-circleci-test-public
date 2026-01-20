@@ -3,8 +3,8 @@ orbs:
   browser-tools: circleci/browser-tools@2 # https://circleci.com/developer/orbs/orb/circleci/browser-tools
 jobs:
   test:
-    docker:
-      - image: cimg/node:24.13.0-browsers
+    macos:
+      xcode: 26.2.0
     steps:
       - checkout
       - run:
