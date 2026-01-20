@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run:
-          npm ci --frozen-lockfile
+          npm ci
       - browser-tools/install_chrome_for_testing:
           version: latest
       - run:
