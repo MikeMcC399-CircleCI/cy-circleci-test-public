@@ -7,6 +7,7 @@ jobs:
       - image: cimg/node:25.4.0-browsers
         environment:
             INSTALL_XFVB: 0
+            DISPLAY: ""
     steps:
       - cypress/install:
           package-manager: "npm"
