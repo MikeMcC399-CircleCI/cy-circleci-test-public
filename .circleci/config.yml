@@ -6,7 +6,7 @@ jobs:
     docker:
       - image: cimg/node:25.4.0-browsers
         environment:
-            INSTALL_XFVB: 0
+            # INSTALL_XFVB: 0
             DISPLAY: ""
     environment:
       DEBUG: "cypress:cli"
