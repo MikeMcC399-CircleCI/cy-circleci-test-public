@@ -8,6 +8,8 @@ jobs:
         environment:
             INSTALL_XFVB: 0
             DISPLAY: ""
+    environment:
+      DEBUG: "cypress:cli"
     steps:
       - cypress/install:
           package-manager: "npm"
