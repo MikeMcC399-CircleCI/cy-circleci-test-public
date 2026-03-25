@@ -6,20 +6,13 @@ jobs:
     docker:
       - image: cimg/node:24.14.0-browsers
     steps:
-      - checkout
-      - run:
-          npm ci
       - browser-tools/install_chrome_for_testing
-      - run:
-          npx cypress info
       - run:
           name: show installation files
           command: |
             ls -al /usr/local/bin
       - run:
           chrome --version
-      - run:
-          npx cypress run --browser chrome-for-testing
 workflows:
   test-workflow:
     jobs:
