@@ -1,10 +1,10 @@
 version: '2.1'
 orbs:
-  browser-tools: circleci/browser-tools@2 # https://circleci.com/developer/orbs/orb/circleci/browser-tools
+  browser-tools: circleci/browser-tools@2.4.0 # https://circleci.com/developer/orbs/orb/circleci/browser-tools
 jobs:
   test:
     docker:
-      - image: cimg/node:24.14.0-browsers
+      - image: cimg/node:24.14.1-browsers
     steps:
       - browser-tools/install_chrome_for_testing
       - run:
