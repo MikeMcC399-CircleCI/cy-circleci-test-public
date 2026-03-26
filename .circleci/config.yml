@@ -10,7 +10,7 @@ jobs:
       - run:
           npm ci
       - browser-tools/install_chrome_for_testing:
-          version: '146.0.7680.165'
+          version: '146.0.7680.164'
       - run:
           npx cypress info
       - run:
